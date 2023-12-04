@@ -1,8 +1,11 @@
 package buscarQuarto;
 
+import lombok.Data;
+
 import java.util.Map;
 
-public class Reservas {
+@Data
+public class Reserva {
     public Map<Periodo, Quarto> reservas;
 
     public void criarReservas(Map<Periodo, Quarto> reservasParam){
