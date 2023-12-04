@@ -1,4 +1,4 @@
-package buscarQuarto;
+package manipularQuarto;
 import java.util.*;
 
 public class GerenciadorQuarto {

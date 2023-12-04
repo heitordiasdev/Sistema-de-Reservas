@@ -1,4 +1,4 @@
-package buscarQuarto;
+package manipularQuarto;
 
 import lombok.Data;
 

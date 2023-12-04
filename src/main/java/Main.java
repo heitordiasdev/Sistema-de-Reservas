@@ -1,4 +1,4 @@
-import buscarQuarto.Quarto;
+import manipularQuarto.Quarto;
 
 import java.util.ArrayList;
 import java.util.List;

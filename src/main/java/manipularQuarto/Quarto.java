@@ -1,6 +1,4 @@
-package buscarQuarto;
-
-import lombok.Data;
+package manipularQuarto;
 
 import java.util.ArrayList;
 import java.util.List;
