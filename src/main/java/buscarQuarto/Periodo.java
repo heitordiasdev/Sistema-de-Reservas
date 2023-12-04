@@ -6,8 +6,7 @@ import java.time.LocalDate;
 
 @Data
 public class Periodo {
-    LocalDate dataInicio;
-    LocalDate dataFim;
-
+    String dataInicio;
+    String dataFim;
     }
 

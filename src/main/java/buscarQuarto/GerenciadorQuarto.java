@@ -2,22 +2,8 @@ package buscarQuarto;
 import java.util.*;
 
 public class GerenciadorQuarto {
-    private List<Quarto> quartos;
-    private Map<Periodo, Quarto> reservas;
 
-    public GerenciadorQuarto() {
-        quartos = Arrays.asList(
-                new Quarto(false, 1, 50.00),
-                new Quarto(false, 2, 50.00),
-                new Quarto(false, 3, 50.00),
-                new Quarto(false, 4, 50.00),
-                new Quarto(false, 5, 50.00)
-
-        );
-        reservas = new HashMap<>();
-    }
-
-    public List<Quarto> buscarQuartos(BuscarQuarto buscarQuarto) {
+    public List<Quarto> buscarQuartos(BuscarQuarto buscarQuarto, Map<Periodo, Quarto> reservas) {
         List<Quarto> quartosDisponiveis = new ArrayList<>();
 
         for (Map.Entry<Periodo, Quarto> entry : reservas.entrySet()) {
