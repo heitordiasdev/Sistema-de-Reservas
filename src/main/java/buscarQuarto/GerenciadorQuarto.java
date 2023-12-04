@@ -1,8 +1,5 @@
 package buscarQuarto;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class GerenciadorQuarto {
     private List<Quarto> quartos;
@@ -17,6 +14,7 @@ public class GerenciadorQuarto {
                 new Quarto(false, 5, 50.00)
 
         );
+        reservas = new HashMap<>();
     }
 
     public List<Quarto> buscarQuartos(BuscarQuarto buscarQuarto) {
