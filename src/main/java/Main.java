@@ -1,7 +1,11 @@
+import manipularQuarto.Periodo;
 import manipularQuarto.Quarto;
+import manipularQuarto.Reserva;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +25,14 @@ public class Main {
 
         quarto1.criarQuartos(listaDeQuartos);
         System.out.println(quarto1.getQuartos());
+
+        Reserva reserva = new Reserva();
+        Periodo periodo1 = new Periodo("2023-01-01", "2023-01-05");
+        Periodo periodo2 = new Periodo("2023-02-01", "2023-02-05");
+
+        reserva.criarReservas(Map.of(periodo1, quarto1, periodo2, quarto3));
+
+        System.out.println(reserva.getReservas());
 
     }
 }
