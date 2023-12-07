@@ -1,22 +1,25 @@
 package manipularQuarto;
+
+import manipularQuarto.BuscarQuarto;
+import manipularQuarto.Periodo;
+import manipularQuarto.Quarto;
+
+import java.time.LocalDate;
 import java.util.*;
 
 public class GerenciadorQuarto {
 
-    public List<Quarto> buscarQuartos(BuscarQuarto buscarQuarto, Map<Periodo, Quarto> reservas) {
-        List<Quarto> quartosDisponiveis = new ArrayList<>();
+    public List<Quarto> buscarQuartos(BuscarQuarto buscarQuarto, Map<Periodo, Quarto> reservas, List<Quarto> todosQuartos) {
+        List<Quarto> quartosDisponiveis = new ArrayList<>(todosQuartos);
 
         for (Map.Entry<Periodo, Quarto> entry : reservas.entrySet()) {
             Periodo periodo = entry.getKey();
             Quarto quartoReservado = entry.getValue();
 
-            if (!periodo.getDataInicio().equals(buscarQuarto.getDataCheckin()) &&
-                    periodo.getDataFim().equals(buscarQuarto.getDataChechout())){
+            LocalDate dataCheckin = LocalDate.parse(buscarQuarto.getDataCheckin());
+            LocalDate dataCheckout = LocalDate.parse(buscarQuarto.getDataChechout());
 
-                // O quarto está reservado para as datas e quantidade de pessoas desejadas
-                // Adicione à lista de quartos disponíveis
-                quartosDisponiveis.add(quartoReservado);
-            }
+            quartosDisponiveis.remove(quartoReservado);
         }
 
         return quartosDisponiveis;

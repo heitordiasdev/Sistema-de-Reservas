@@ -1,6 +1,4 @@
-import manipularQuarto.Periodo;
-import manipularQuarto.Quarto;
-import manipularQuarto.Reserva;
+import manipularQuarto.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -33,6 +31,18 @@ public class Main {
         reserva.criarReservas(Map.of(periodo1, quarto1, periodo2, quarto3));
 
         System.out.println(reserva.getReservas());
+
+        BuscarQuarto buscarQuartoMeusParam = new BuscarQuarto("2023-01-01", "2023-01-05", 2, 0);
+
+        GerenciadorQuarto primeiraBusca = new GerenciadorQuarto();
+
+        List<Quarto> quartosDisponiveis = primeiraBusca.buscarQuartos(buscarQuartoMeusParam, reserva.getReservas(), listaDeQuartos);
+
+        for (Quarto quarto : quartosDisponiveis) {
+            System.out.println(quarto);
+        }
+
+
 
     }
 }
