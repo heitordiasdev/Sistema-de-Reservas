@@ -45,7 +45,7 @@ public class Main {
             System.out.println(quarto);
         }
 
-        // Linhas para verificar se o método "cancelarReserva" está funcionando!
+        // Linhas para verificar se o método "cancelarReserva" está funcionando
         System.out.println("Reservas antes do cancelamento: " + reserva.getReservas());
 
         CancelarReserva cancelador = new CancelarReserva();
