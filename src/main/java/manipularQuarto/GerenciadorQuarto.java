@@ -16,10 +16,20 @@ public class GerenciadorQuarto {
             Periodo periodo = entry.getKey();
             Quarto quartoReservado = entry.getValue();
 
+            // Convertendo as datas de String para LocalDate
             LocalDate dataCheckin = LocalDate.parse(buscarQuarto.getDataCheckin());
             LocalDate dataCheckout = LocalDate.parse(buscarQuarto.getDataChechout());
 
-            quartosDisponiveis.remove(quartoReservado);
+            // Convertendo as datas de String para LocalDate
+            LocalDate reservaInicio = LocalDate.parse(periodo.getDataInicio());
+            LocalDate reservaFim = LocalDate.parse(periodo.getDataFim());
+
+            // Verificar se o quarto está reservado durante o período desejado
+            if (!reservaInicio.isAfter(dataCheckout) && !reservaFim.isBefore(dataCheckin)) {
+                // O quarto está reservado durante as datas desejadas
+                // Remover da lista de quartos disponíveis
+                quartosDisponiveis.remove(quartoReservado);
+            }
         }
 
         return quartosDisponiveis;

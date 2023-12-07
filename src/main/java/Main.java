@@ -36,13 +36,15 @@ public class Main {
 
         GerenciadorQuarto primeiraBusca = new GerenciadorQuarto();
 
+        // Finalmente chamando o método buscarQuarto, passando minhas informações de busca (1 parametro)
+        // e também as reservas para comparar com "listaDeQuartos", para ver de acordo com minhas informações de buscar
+        // qual dos quartos está reservado nas datas que passei.
+
         List<Quarto> quartosDisponiveis = primeiraBusca.buscarQuartos(buscarQuartoMeusParam, reserva.getReservas(), listaDeQuartos);
 
         for (Quarto quarto : quartosDisponiveis) {
             System.out.println(quarto);
         }
-
-
 
     }
 }
