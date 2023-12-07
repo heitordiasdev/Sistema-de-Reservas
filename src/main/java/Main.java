@@ -1,6 +1,5 @@
+import cancelarReserva.CancelarReserva;
 import manipularQuarto.*;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -46,5 +45,15 @@ public class Main {
             System.out.println(quarto);
         }
 
+        // Linhas para verificar se o método "cancelarReserva" está funcionando!
+        System.out.println("Reservas antes do cancelamento: " + reserva.getReservas());
+
+        CancelarReserva cancelador = new CancelarReserva();
+        cancelador.cancelarReserva(periodo1, quarto1, reserva.getReservas());
+
+        System.out.println("Reservas após o cancelamento: " + reserva.getReservas());
     }
+
+
 }
+
