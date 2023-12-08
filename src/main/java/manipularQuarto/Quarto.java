@@ -1,8 +1,11 @@
 package manipularQuarto;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class Quarto {
     private boolean status;
     private int id;

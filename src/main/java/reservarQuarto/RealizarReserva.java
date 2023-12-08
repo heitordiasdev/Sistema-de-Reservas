@@ -1,18 +1,24 @@
 package reservarQuarto;
 
-import manipularQuarto.GerenciadorQuarto;
+import lombok.Getter;
+import manipularQuarto.Periodo;
 import manipularQuarto.Quarto;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
+import java.util.List;
+@Getter
 public class RealizarReserva {
-    GerenciadorQuarto gerenciardorDeQuarto = new GerenciadorQuarto();
-    ArrayList<Quarto> listaDeQuartosReservados = new ArrayList<>();
-    Hospede hospede = new Hospede();
+    List<Quarto> listaDeQuartosReservados = new ArrayList<>();
 
-    public Quarto realizarReserva() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite o ID do quarto disponível que você deseja reservar: ");
+    public List<Quarto> realizarReserva(List<Quarto> quartosDisponiveis, int id) {
+
+        for (Quarto quartoDisponivel : quartosDisponiveis) {
+            if (quartoDisponivel.getId() == id) {
+                quartoDisponivel.setStatus(true);
+                listaDeQuartosReservados.add(quartoDisponivel);
+            }
+        }
+        System.out.println(listaDeQuartosReservados);
+        return listaDeQuartosReservados;
     }
 }

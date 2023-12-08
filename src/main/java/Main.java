@@ -1,4 +1,5 @@
 import manipularQuarto.*;
+import reservarQuarto.RealizarReserva;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -46,5 +47,11 @@ public class Main {
             System.out.println(quarto);
         }
 
+        RealizarReserva realizarReserva = new RealizarReserva();
+        realizarReserva.realizarReserva(quartosDisponiveis, 2);
+
+        for (Quarto quarto : quartosDisponiveis) {
+            System.out.println(quarto);
+        }
     }
 }
