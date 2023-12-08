@@ -43,9 +43,9 @@ public class Main {
 
         List<Quarto> quartosDisponiveis = primeiraBusca.buscarQuartos(buscarQuartoMeusParam, reserva.getReservas(), listaDeQuartos);
 
-        for (Quarto quarto : quartosDisponiveis) {
-            System.out.println(quarto);
-        }
+//        for (Quarto quarto : quartosDisponiveis) {
+//            System.out.println(quarto);
+//        }
 
         RealizarReserva realizarReserva = new RealizarReserva();
         realizarReserva.realizarReserva(quartosDisponiveis, 2);

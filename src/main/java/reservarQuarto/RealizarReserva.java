@@ -1,24 +1,23 @@
 package reservarQuarto;
 
 import lombok.Getter;
-import manipularQuarto.Periodo;
 import manipularQuarto.Quarto;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 @Getter
 public class RealizarReserva {
-    List<Quarto> listaDeQuartosReservados = new ArrayList<>();
+    List<Quarto> quartosReservados = new ArrayList<>();
 
-    public List<Quarto> realizarReserva(List<Quarto> quartosDisponiveis, int id) {
+    public List<Quarto> realizarReserva(@NotNull List<Quarto> quartosDisponiveis, int id) {
 
         for (Quarto quartoDisponivel : quartosDisponiveis) {
             if (quartoDisponivel.getId() == id) {
                 quartoDisponivel.setStatus(true);
-                listaDeQuartosReservados.add(quartoDisponivel);
+                quartosReservados.add(quartoDisponivel);
             }
         }
-        System.out.println(listaDeQuartosReservados);
-        return listaDeQuartosReservados;
+        return quartosReservados;
     }
 }
