@@ -3,17 +3,21 @@ package cancelarReserva;
 import manipularQuarto.Periodo;
 import manipularQuarto.Quarto;
 
+import java.util.Iterator;
 import java.util.Map;
 
 public class CancelarReserva {
     public void cancelarReserva(Periodo periodo, Quarto quarto, Map<Periodo, Quarto> reservas) {
-        for (Map.Entry<Periodo, Quarto> entry : reservas.entrySet()) {
+        Iterator<Map.Entry<Periodo, Quarto>> iterator = reservas.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+            Map.Entry<Periodo, Quarto> entry = iterator.next();
             Periodo periodoReserva = entry.getKey();
             Quarto quartoReservado = entry.getValue();
 
-            if (periodoReserva.equals(periodo)) {
-                reservas.remove(periodoReserva);
-                System.out.println("Reserva cancelada para o quarto: " + quartoReservado);
+            // Comparar o 'periodo' e 'quarto' passados como parâmetro com 'periodoReserva' e 'quartoReservado'
+            if (periodoReserva.equals(periodo) && quartoReservado.equals(quarto)) {
+                iterator.remove();
             }
         }
     }
