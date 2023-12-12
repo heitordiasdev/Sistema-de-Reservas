@@ -1,3 +1,4 @@
+import cancelarReserva.CancelarReserva;
 import manipularQuarto.*;
 import reservarQuarto.RealizarReserva;
 
@@ -43,15 +44,25 @@ public class Main {
 
         List<Quarto> quartosDisponiveis = primeiraBusca.buscarQuartos(buscarQuartoMeusParam, reserva.getReservas(), listaDeQuartos);
 
-//        for (Quarto quarto : quartosDisponiveis) {
-//            System.out.println(quarto);
-//        }
-
-        RealizarReserva realizarReserva = new RealizarReserva();
-        realizarReserva.realizarReserva(quartosDisponiveis, 2);
-
         for (Quarto quarto : quartosDisponiveis) {
             System.out.println(quarto);
         }
+
+        RealizarReserva realizarReserva = new RealizarReserva();
+        realizarReserva.realizarReserva(periodo1, quarto1, reserva.getReservas());
+
+        System.out.println("\n");
+        // Linhas para verificar se o método "cancelarReserva" está funcionando
+        System.out.println("Reservas antes do cancelamento: " + reserva.getReservas());
+        System.out.println("\n");
+
+        CancelarReserva cancelador = new CancelarReserva();
+        cancelador.cancelarReserva(periodo1, quarto1, reserva.getReservas());
+        System.out.println("\n");
+
+        System.out.println("Reservas após o cancelamento: " + reserva.getReservas());
+
+
+
     }
 }

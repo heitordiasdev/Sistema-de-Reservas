@@ -2,8 +2,6 @@ package manipularQuarto;
 
 import lombok.Data;
 
-import java.time.LocalDate;
-
 @Data
 public class Periodo {
     private String dataInicio;
