@@ -11,6 +11,7 @@ public class Quarto {
     private int id;
     private double valor;
     private List<Quarto> quartos;
+
     public Quarto(boolean status, int id, double valor) {
         this.status = status;
         this.id = id;

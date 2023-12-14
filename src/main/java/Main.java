@@ -2,7 +2,6 @@ import cancelarReserva.CancelarReserva;
 import manipularQuarto.*;
 import reservarQuarto.RealizarReserva;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,7 +15,7 @@ public class Main {
             Quarto quarto4 = new Quarto(false, 4, 80.00);
             Quarto quarto5 = new Quarto(false, 5, 60.00);
 
-            List<Quarto> listaDeQuartos = new ArrayList<>();
+            List<Quarto> listaDeQuartos = new ArrayList<Quarto>();
             listaDeQuartos.add(quarto1);
             listaDeQuartos.add(quarto2);
             listaDeQuartos.add(quarto3);
