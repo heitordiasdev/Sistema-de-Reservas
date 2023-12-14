@@ -19,10 +19,6 @@ public class Quarto {
         this.quartos = new ArrayList<>(); // Inicializar a lista de quartos
     }
 
-    public void criarQuartos(List<Quarto> quartosParam) {
-        this.quartos.addAll(quartosParam);
-    }
-
     @Override
     public String toString() {
         return "Quarto{" +
@@ -30,10 +26,5 @@ public class Quarto {
                 ", id=" + id +
                 ", valor=" + valor +
                 '}';
-    }
-
-    // Getter para o atributo quartos
-    public List<Quarto> getQuartos() {
-        return quartos;
     }
 }

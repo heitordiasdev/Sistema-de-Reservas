@@ -21,7 +21,8 @@ public class RelatorioQuarto {
 
     }
 
-    private static List<Quarto> calcularQuartosDisponiveis(List<Quarto> todosQuartos, Map<Periodo, Quarto> reservas) {
+
+    private static List<Quarto> calcularQuartosIndisponiveis(List<Quarto> todosQuartos, Map<Periodo, Quarto> reservas) {
         GerenciadorQuarto gerenciadorQuarto = new GerenciadorQuarto();
         BuscarQuarto busca = new BuscarQuarto("2023-01-01", "2023-01-05", 2, 0);
         return gerenciadorQuarto.buscarQuartos(busca, reservas, todosQuartos)
@@ -30,9 +31,9 @@ public class RelatorioQuarto {
                 .toList();
     }
 
-    private static List<Quarto> calcularQuartosIndisponiveis(List<Quarto> todosQuartos, Map<Periodo, Quarto> reservas) {
+    private static List<Quarto> calcularQuartosDisponiveis(List<Quarto> todosQuartos, Map<Periodo, Quarto> reservas) {
         return todosQuartos.stream()
-                .filter(quarto -> !calcularQuartosDisponiveis(todosQuartos, reservas).contains(quarto))
+                .filter(quarto -> !calcularQuartosIndisponiveis(todosQuartos, reservas).contains(quarto))
                 .toList();
     }
 
