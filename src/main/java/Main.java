@@ -43,12 +43,18 @@ public class Main {
         System.out.println("\n");
 
         //Realizando reserva de quarto
-        Scanner scanner = new Scanner(System.in);
 
-        RealizarReserva realizarReserva = new RealizarReserva();
-        System.out.print("Informe o quarto que você deseja reservar: ");
-        int idQuarto = scanner.nextInt();
-        realizarReserva.realizarReserva(quartosDisponiveis,periodo2, idQuarto, reserva.getReservas());
+        try {
+            Scanner scanner = new Scanner(System.in);
+
+            RealizarReserva realizarReserva = new RealizarReserva();
+            System.out.print("Informe o quarto que você deseja reservar: ");
+            int idQuarto = scanner.nextInt();
+
+            realizarReserva.realizarReserva(quartosDisponiveis,periodo2, idQuarto, reserva.getReservas());
+        } catch (Exception ex) {
+            ex.getMessage();
+        }
 
         System.out.println("Lista de reserva: " + reserva.getReservas());
 
