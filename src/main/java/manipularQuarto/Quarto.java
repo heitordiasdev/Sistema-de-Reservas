@@ -1,6 +1,7 @@
 package manipularQuarto;
 
 import lombok.Data;
+import reservarQuarto.Hospede;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Quarto {
     private int id;
     private double valor;
     private List<Quarto> quartos;
-
+    List<Hospede> hospedes;
     public Quarto(boolean status, int id, double valor) {
         this.status = status;
         this.id = id;

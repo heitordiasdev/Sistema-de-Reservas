@@ -5,10 +5,7 @@ import manipularQuarto.Periodo;
 import manipularQuarto.Quarto;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Getter
 public class RealizarReserva {
@@ -21,11 +18,17 @@ public class RealizarReserva {
 
             while (iterator.hasNext()) {
                 Quarto quartoDisponivel = iterator.next();
+                Hospede hospede = new Hospede();
+                List<Hospede> hospedes = new ArrayList<>();
 
                 if (quarto.getId() == quartoDisponivel.getId()) {
                     quartoDisponivel.setStatus(true);
+                    hospedes.add(hospede.VincularHospedeAoQuarto());
+                    quartoDisponivel.setHospedes(hospedes);
+
                     iterator.remove();
                     reservas.put(periodo, quartoDisponivel);
+                    System.out.println("Hospedado: " + hospede);
                     break;
                 }
             }
