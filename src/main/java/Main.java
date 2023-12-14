@@ -7,7 +7,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        Quarto quarto1 = new Quarto(false, 1, 50.00);
+        Quarto quarto1 = new Quarto(true, 1, 50.00);
         Quarto quarto2 = new Quarto(false, 2, 50.00);
         Quarto quarto3 = new Quarto(false, 3, 70.00);
         Quarto quarto4 = new Quarto(false, 4,80.00);
@@ -54,8 +54,6 @@ public class Main {
         System.out.println("\n");
         System.out.println("Reservas após o cancelamento: " + reserva.getReservas());
 
+        RelatorioQuarto.gerarRelatorio(listaDeQuartos, reserva.getReservas());
     }
-
-
 }
-
