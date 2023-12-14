@@ -31,7 +31,7 @@ public class Main {
 
 //        System.out.println(reserva.getReservas());
 
-        BuscarQuarto buscarQuartoMeusParam = new BuscarQuarto("2023-01-01", "2023-01-05", 2, 0);
+        BuscarQuarto buscarQuartoMeusParam = new BuscarQuarto("2023-01-05", "2023-01-01", 2, 0);
 
         GerenciadorQuarto primeiraBusca = new GerenciadorQuarto();
 
@@ -44,15 +44,16 @@ public class Main {
         for (Quarto quarto : quartosDisponiveis) {
             System.out.println(quarto);
         }
-        System.out.println("\n");
-        // Linhas para verificar se o método "cancelarReserva" está funcionando
-        System.out.println("Reservas antes do cancelamento: " + reserva.getReservas());
-        System.out.println("\n");
 
-        CancelarReserva cancelador = new CancelarReserva();
-        cancelador.cancelarReserva(periodo1, quarto1, reserva.getReservas());
-        System.out.println("\n");
-        System.out.println("Reservas após o cancelamento: " + reserva.getReservas());
+//        System.out.println("\n");
+//        // Linhas para verificar se o método "cancelarReserva" está funcionando
+//        System.out.println("Reservas antes do cancelamento: " + reserva.getReservas());
+//        System.out.println("\n");
+//
+//        CancelarReserva cancelador = new CancelarReserva();
+//        cancelador.cancelarReserva(periodo1, quarto1, reserva.getReservas());
+//        System.out.println("\n");
+//        System.out.println("Reservas após o cancelamento: " + reserva.getReservas());
 
 
     }
