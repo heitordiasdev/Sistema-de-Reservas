@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,8 +45,12 @@ public class Main {
         System.out.println("\n");
 
         //Realizando reserva de quarto
+        Scanner scanner = new Scanner(System.in);
+
         RealizarReserva realizarReserva = new RealizarReserva();
-        realizarReserva.realizarReserva(quartosDisponiveis,periodo2, quarto2, reserva.getReservas());
+        System.out.print("Informe o quarto que você deseja reservar: ");
+        int idQuarto = scanner.nextInt();
+        realizarReserva.realizarReserva(quartosDisponiveis,periodo2, idQuarto, reserva.getReservas());
 
         System.out.println("Lista de reserva: " + reserva.getReservas());
 
