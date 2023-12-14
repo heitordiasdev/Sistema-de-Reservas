@@ -50,7 +50,7 @@ public class Main {
         System.out.println("\n");
 
         CancelarReserva cancelador = new CancelarReserva();
-        cancelador.cancelarReserva(periodo1=null, quarto1=null, null);
+        cancelador.cancelarReserva(periodo1, quarto1, reserva.getReservas());
         System.out.println("\n");
         System.out.println("Reservas após o cancelamento: " + reserva.getReservas());
 
