@@ -58,8 +58,5 @@ public class Main {
         cancelador.cancelarReserva(periodo1, quarto2, reserva.getReservas());
 
         System.out.println("Reservas após o cancelamento: " + reserva.getReservas());
-
-
-
     }
 }
