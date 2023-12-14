@@ -60,7 +60,7 @@ public class Main {
             System.out.println("\n");
 
             CancelarReserva cancelador = new CancelarReserva();
-            cancelador.cancelarReserva(periodo1, quarto3, reserva.getReservas());
+            cancelador.cancelarReserva(periodo1, quarto1, reserva.getReservas());
 
              System.out.println("Reservas após o cancelamento: " + reserva.getReservas());
         } catch (RuntimeException e) {
@@ -72,3 +72,4 @@ public class Main {
         }
     }
 }
+

@@ -19,8 +19,6 @@ public class RelatorioQuarto {
         System.out.println("\nPreços de Cada Quarto:");
         exibirPrecosQuartos(todosQuartos);
 
-        System.out.println("\nHóspedes:");
-        exibirHospedes(reservas);
     }
 
     private static List<Quarto> calcularQuartosDisponiveis(List<Quarto> todosQuartos, Map<Periodo, Quarto> reservas) {
@@ -49,13 +47,5 @@ public class RelatorioQuarto {
             System.out.println("Quarto " + quarto.getId() + ": R$ " + quarto.getValor());
         }
     }
-
-    private static void exibirHospedes(Map<Periodo, Quarto> reservas) {
-        for (Map.Entry<Periodo, Quarto> entry : reservas.entrySet()) {
-            Periodo periodo = entry.getKey();
-            Quarto quarto = entry.getValue();
-            System.out.println("Período: " + periodo.getDataInicio() + " a " + periodo.getDataFim() +
-                    ", Quarto: " + quarto.getId());
-        }
-    }
 }
+
